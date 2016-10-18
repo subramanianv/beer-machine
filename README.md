@@ -22,7 +22,7 @@ On 14 October 2016 we had a group meeting to outline a high-level breakdown of t
   * Desired: LED displaying beer remaining; an overfill sensor, a sensor for determining if cup is properly placed (and not pour if cup either not present or improperly placed)
   * Will need to work closely with Python team
 
-Group communication and management/organization will occur primarily on the [Blockchain Canada slack group](blockchaincanada.slack.com), and the dev-ethereum and dev-beer-machine channels in that group. Here is the [slack invite]([invite](http://blockchaincanada.herokuapp.com/)) if you aren't a member already. See you there!
+Group communication and management/organization will occur primarily on the [Blockchain Canada slack group](blockchaincanada.slack.com), and the dev-ethereum and dev-beer-machine channels in that group. Here is the [slack invite](http://blockchaincanada.herokuapp.com/) if you aren't a member already. See you there!
 
 
 ## BackGround Resources
