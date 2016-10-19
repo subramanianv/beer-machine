@@ -13,16 +13,16 @@ On 14 October 2016 we had a group meeting to outline a high-level breakdown of t
   * Main desired features: Set dynamic price, payment events, send funds upon payment to keg and delivery costs account, pay devs automatic percentage, manage frequent beer drinking points / subscription plan
 
 3. Python code interfaced with Hardware.
-  * Team Leads:  Anastasia, Michael, Jahse(?)
+  * Team Leads:  Anastasia and Michael
   * Main features: payment watching loop, send signal to machine to start/stop pouring, display "beer remaining" info on LED.
-  *
+
 4. Hardware
   * Team Leads: Nelia and Spiro
   * Hardware, at minimum, a Raspberry Pi and Beer Machine (including a valve attachment that can be controlled by the RPi).
   * Desired: LED displaying beer remaining; an overfill sensor, a sensor for determining if cup is properly placed (and not pour if cup either not present or improperly placed)
   * Will need to work closely with Python team
 
-Group communication and management/organization will occur primarily on the [Blockchain Canada slack group](blockchaincanada.slack.com), and the dev-ethereum and dev-beer-machine channels in that group. Here is the [slack invite](http://blockchaincanada.herokuapp.com/) if you aren't a member already. See you there!
+Group communication and management/organization will occur primarily on the [Blockchain Canada slack group](blockchaincanada.slack.com), and the #dev-ethereum and #dev-beer-machine channels in that group. Here is the [slack invite](http://blockchaincanada.herokuapp.com/) if you aren't a member already. See you there!
 
 
 ## BackGround Resources
