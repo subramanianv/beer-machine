@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+           <!DOCTYPE html>
 
 <html>
     <head>
@@ -124,10 +125,12 @@
                           <div class="col-md-8 text-left margin-btm20">
                               <p>
                                   To git yer beer, scan the QR code into your favourite Ethereum lite client, like Jaxx!
-
-                                  * QR place holder below
                               </p>
                           </div>
+						  <div id="qrcode"></div>
+                            <script type="text/javascript">
+                            new QRCode(document.getElementById("qrcode"), "http://www.tokn.ca");
+						  </script>
                           <div class="form-group">
                               <output type="text" class="form-control">
                           </div>
