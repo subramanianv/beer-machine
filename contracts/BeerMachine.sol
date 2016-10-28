@@ -52,7 +52,15 @@ contract BeerMachine is OwnedProxy {
     }
   }
 
-  function () valueGreaterThanPrice() payable public {
+  modifier inOperation() {
+    if (operational) {
+      _;
+    } else {
+      throw;
+    }
+  }
+
+  function () inOperation() valueGreaterThanPrice() payable public {
     amount[msg.sender] += msg.value;
     AmountPayed(msg.sender, msg.value);
   }
@@ -61,10 +69,15 @@ contract BeerMachine is OwnedProxy {
     owner = _owner;
     price = _price;
     payoutDestination = _payoutDestination;
+    operational = true;
   }
 
   function setPrice(uint _price) onlyowner public {
     price = _price;
+  }
+
+  function setOperational(bool _state) onlyowner public {
+    operational = _state;
   }
 
   function setPayoutDestination(address _payoutDestination) onlyowner public {
@@ -77,6 +90,7 @@ contract BeerMachine is OwnedProxy {
 
   event AmountPayed(address _sender, uint _amount);
 
+  bool public operational;
   uint public price;
   address public payoutDestination;
   mapping(address => uint) public amount;
