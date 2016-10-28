@@ -1,1 +1,1 @@
-# Front-end code
+Ethereum Contract
