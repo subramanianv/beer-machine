@@ -1,7 +1,7 @@
 pragma solidity ^0.4.3;
 
-contract owned {
-  function owned() {
+contract Owned {
+  function Owned() {
     owner = msg.sender;
   }
 
@@ -10,28 +10,11 @@ contract owned {
       _;
     }
   }
-
   address public owner;
 }
 
-contract Proxy {
-  function forward_transaction(address _destination, uint _value, bytes _calldata) public {}
-}
 
-contract OwnedProxy is owned, Proxy {
-  modifier onlyowner {
-    if (msg.sender == address(this) || msg.sender == owner) {
-      _;
-    }
-  }
-
-  /// @notice The contract fallback function
-  function () payable public {}
-
-  function OwnedProxy(address _owner) {
-    owner = _owner;
-  }
-
+contract OwnedProxy is Owned {
   function forward_transaction(address _destination, uint _value, bytes _calldata) public onlyowner {
     if (!_destination.call.value(_value)(_calldata)) {
       throw;
@@ -60,7 +43,7 @@ contract BeerMachine is OwnedProxy {
     }
   }
 
-  function () inOperation() valueGreaterThanPrice() payable public {
+  function () inOperation() valueGreaterThanPrice() public {
     amount[msg.sender] += msg.value;
     AmountPayed(msg.sender, msg.value);
   }
@@ -85,7 +68,7 @@ contract BeerMachine is OwnedProxy {
   }
 
   function payout() onlyowner public {
-    forward_transaction(payoutDestination, this.balance, 0);
+    forward_transaction(payoutDestination, this.balance, "");
   }
 
   event AmountPayed(address _sender, uint _amount);
